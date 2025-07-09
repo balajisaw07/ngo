@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import ProjectsPage from './pages/ProjectsPage';
 import BlogPage from './pages/BlogPage';
+import CareersPage from './pages/CareersPage';
 import AdminLogin from './pages/AdminLogin';
 import AdminDashboard from './pages/AdminDashboard';
 import { AuthProvider } from './context/AuthContext';
@@ -21,6 +22,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/projects" element={<ProjectsPage />} />
               <Route path="/blog" element={<BlogPage />} />
+              <Route path="/careers" element={<CareersPage />} />
               <Route path="/admin" element={<AdminLogin />} />
               <Route path="/admin/dashboard" element={<AdminDashboard />} />
             </Routes>
