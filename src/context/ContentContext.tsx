@@ -266,7 +266,7 @@ export const ContentProvider: React.FC<{ children: React.ReactNode }> = ({ child
     updateBlogPost,
     updateCareer,
     deleteProject,
-    deleteBlogPost
+    deleteBlogPost,
     deleteCareer
   };
 
