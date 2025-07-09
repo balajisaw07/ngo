@@ -38,7 +38,6 @@ const AdminDashboard = () => {
     navigate('/');
   };
 
-  const openModal = (type: 'project' | 'blog', item?: any) => {
   const openModal = (type: 'project' | 'blog' | 'career', item?: any) => {
     setEditingItem(item);
     if (type === 'project') {
@@ -425,17 +424,17 @@ const AdminDashboard = () => {
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-heritage-gold focus:border-transparent resize-none"
                     />
                   </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Content</label>
-                  <textarea
-                    name="content"
-                    value={formData.content || ''}
-                    onChange={handleChange}
-                    required
-                    rows={6}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-heritage-gold focus:border-transparent resize-none"
-                  />
-                </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Content</label>
+                    <textarea
+                      name="content"
+                      value={formData.content || ''}
+                      onChange={handleChange}
+                      required
+                      rows={6}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-heritage-gold focus:border-transparent resize-none"
+                    />
+                  </div>
                 </>
               )}
 
@@ -491,7 +490,7 @@ const AdminDashboard = () => {
                       />
                     </div>
                   </>
-                ) : (
+                ) : activeTab === 'blog' ? (
                   <>
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">Author</label>
