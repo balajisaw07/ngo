@@ -73,81 +73,48 @@ const Portfolio = () => {
     : projects.filter(project => project.category === activeCategory);
 
   return (
-    <section id="portfolio" className="py-20 bg-white">
+    <section id="portfolio" className="py-20 bg-gradient-to-br from-cream via-white to-heritage-gold/10 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <span className="text-heritage-gold font-semibold text-sm uppercase tracking-wider">Our Portfolio</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-heritage-navy font-serif mt-2 mb-6">
-            Celebrating Our
-            <span className="text-heritage-gold block">Achievements</span>
+          <span className="text-heritage-gold font-semibold text-sm uppercase tracking-wider">Events & Projects</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-heritage-navy font-serif mt-2 mb-6 dark:text-white">
+            Our Key Initiatives
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Discover our most significant heritage preservation projects that showcase our commitment to cultural conservation.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto dark:text-gray-100">
+            Explore our major research, conservation, and outreach projects.
           </p>
         </div>
-
-        {/* Category Filter */}
-        <div className="flex flex-wrap justify-center mb-12 gap-4">
-          {categories.map((category) => (
-            <button
-              key={category.id}
-              onClick={() => setActiveCategory(category.id)}
-              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                activeCategory === category.id
-                  ? 'bg-heritage-gold text-white shadow-lg'
-                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-              }`}
+        <div className="grid md:grid-cols-2 gap-10">
+          {[
+            {
+              title: 'Human Genetic and Micro biome Studies of Central Indian Population',
+              icon: '🧬',
+            },
+            {
+              title: 'Archaeological Survey of Tadoba-Andhari Tiger Reserve, Chandrapur, Maharashtra',
+              icon: '🗺️',
+            },
+            {
+              title: 'Installation of Cultural Notice Board at Tadoba-Andhari Tiger Reserve, Chandrapur, Maharashtra',
+              icon: '📜',
+            },
+            {
+              title: 'Archaeological Documentary Film on Cultural and Historical Heritage of Tadoba',
+              icon: '🎬',
+            },
+          ].map((project, idx) => (
+            <div
+              key={idx}
+              className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 flex items-center space-x-6 border border-heritage-gold/20 dark:border-gray-700 hover:shadow-2xl hover:scale-105 hover:border-heritage-gold transition-all duration-300 group"
             >
-              {category.name}
-            </button>
-          ))}
-        </div>
-
-        {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project) => (
-            <div key={project.id} className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              <div className="relative overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute top-4 right-4 bg-heritage-gold text-white px-3 py-1 rounded-full text-sm font-medium">
-                  {project.year}
-                </div>
-                <button className="absolute bottom-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-heritage-gold hover:text-white">
-                  <ExternalLink size={16} />
-                </button>
+              <div className="text-5xl transition-transform duration-300 group-hover:animate-bounce">
+                {project.icon}
               </div>
-              
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-heritage-navy mb-2 font-serif group-hover:text-heritage-gold transition-colors duration-200">
-                  {project.title}
-                </h3>
-                <p className="text-gray-600 mb-4 leading-relaxed">{project.description}</p>
-                
-                <div className="flex items-center justify-between text-sm text-gray-500">
-                  <div className="flex items-center">
-                    <MapPin size={14} className="mr-1" />
-                    {project.location}
-                  </div>
-                  <div className="flex items-center">
-                    <Calendar size={14} className="mr-1" />
-                    {project.year}
-                  </div>
-                </div>
+              <div>
+                <h3 className="text-lg font-semibold text-heritage-navy dark:text-white mb-2">{project.title}</h3>
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Load More Button */}
-        <div className="text-center mt-12">
-          <button className="bg-heritage-navy text-white px-8 py-4 rounded-full hover:bg-heritage-navy/90 transition-colors duration-200 font-semibold">
-            View All Projects
-          </button>
         </div>
       </div>
     </section>

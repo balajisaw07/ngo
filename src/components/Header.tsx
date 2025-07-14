@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Crown } from 'lucide-react';
+import { Menu, X, Crown, Moon, Sun } from 'lucide-react';
+import logo from '../assets/logo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,31 +44,38 @@ const Header = () => {
     }
   };
 
+  const toggleDarkMode = () => {
+    setDarkMode((prev) => {
+      const newMode = !prev;
+      if (newMode) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      return newMode;
+    });
+  };
+
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+      isScrolled ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-heritage-gold rounded-lg flex items-center justify-center">
-              <Crown className="w-6 h-6 text-white" />
-            </div>
-            <div>
-              <h1 className="text-xl font-bold text-heritage-navy font-serif">Savani Heritage</h1>
-              <p className="text-xs text-heritage-navy/70">Preserving Legacy</p>
-            </div>
+            <img src={logo} alt="VĀRASĀ Logo" className="h-12 w-auto" />
+            <span className="text-3xl font-extrabold tracking-wide font-serif text-[#d32f2f] dark:text-white drop-shadow-sm" style={{ letterSpacing: '0.2em' }}>VĀRASĀ</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-8 text-heritage-navy dark:text-white">
             {navItems.map((item) => (
               item.path.startsWith('/#') ? (
                 <button
                   key={item.name}
                   onClick={() => handleNavClick(item.path)}
-                  className="text-heritage-navy hover:text-heritage-gold transition-colors duration-200 font-medium relative group"
+                  className="text-heritage-navy dark:text-white hover:text-heritage-gold dark:hover:text-heritage-gold transition-colors duration-200 font-medium relative group"
                 >
                   {item.name}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-heritage-gold transition-all duration-200 group-hover:w-full"></span>
@@ -75,7 +84,7 @@ const Header = () => {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className="text-heritage-navy hover:text-heritage-gold transition-colors duration-200 font-medium relative group"
+                  className="text-heritage-navy dark:text-white hover:text-heritage-gold dark:hover:text-heritage-gold transition-colors duration-200 font-medium relative group"
                 >
                   {item.name}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-heritage-gold transition-all duration-200 group-hover:w-full"></span>
@@ -88,6 +97,13 @@ const Header = () => {
             >
               Admin
             </Link>
+            <button
+              onClick={toggleDarkMode}
+              className="ml-4 p-2 rounded-full border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-900 shadow-sm hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors duration-200"
+              aria-label="Toggle dark mode"
+            >
+              {darkMode ? <Sun className="w-5 h-5 text-yellow-500" /> : <Moon className="w-5 h-5 text-gray-800" />}
+            </button>
           </nav>
 
           {/* Mobile Menu Button */}

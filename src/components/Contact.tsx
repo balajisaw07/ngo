@@ -51,15 +51,15 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gray-50">
+    <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <span className="text-heritage-gold font-semibold text-sm uppercase tracking-wider">Contact Us</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-heritage-navy font-serif mt-2 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-heritage-navy font-serif mt-2 mb-6 dark:text-white">
             Let's Preserve Heritage
             <span className="text-heritage-gold block">Together</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto dark:text-gray-100">
             Ready to start your heritage preservation project? Get in touch with our expert team.
           </p>
         </div>
@@ -67,18 +67,18 @@ const Contact = () => {
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Contact Information */}
           <div>
-            <h3 className="text-2xl font-semibold text-heritage-navy font-serif mb-8">Get In Touch</h3>
+            <h3 className="text-2xl font-semibold text-heritage-navy font-serif mb-8 dark:text-white">Get In Touch</h3>
             
             <div className="space-y-6 mb-8">
               {contactInfo.map((info, index) => (
-                <div key={index} className="flex items-start space-x-4 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200">
+                <div key={index} className="flex items-start space-x-4 p-4 bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200 dark:text-white">
                   <div className="w-12 h-12 bg-heritage-gold/10 rounded-lg flex items-center justify-center flex-shrink-0">
                     <info.icon className="w-6 h-6 text-heritage-gold" />
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-heritage-navy mb-2">{info.title}</h4>
+                    <h4 className="text-lg font-semibold text-heritage-navy mb-2 dark:text-white">{info.title}</h4>
                     {info.details.map((detail, idx) => (
-                      <p key={idx} className="text-gray-600">{detail}</p>
+                      <p key={idx} className="text-gray-600 dark:text-gray-100">{detail}</p>
                     ))}
                   </div>
                 </div>

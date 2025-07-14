@@ -42,42 +42,30 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-gray-50">
+    <section id="services" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <span className="text-heritage-gold font-semibold text-sm uppercase tracking-wider">Our Services</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-heritage-navy font-serif mt-2 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-heritage-navy font-serif mt-2 mb-6 dark:text-white">
             Comprehensive Heritage
             <span className="text-heritage-gold block">Solutions</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto dark:text-gray-100">
             From restoration to preservation, we offer a complete range of services to protect and celebrate cultural heritage.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
-              <div className="w-14 h-14 bg-heritage-gold/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-heritage-gold group-hover:scale-110 transition-all duration-300">
-                <service.icon className="w-7 h-7 text-heritage-gold group-hover:text-white transition-colors duration-300" />
-              </div>
-              
-              <h3 className="text-xl font-semibold text-heritage-navy mb-4 font-serif">{service.title}</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
-              
-              <ul className="space-y-2">
-                {service.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center text-sm text-gray-500">
-                    <div className="w-1.5 h-1.5 bg-heritage-gold rounded-full mr-3"></div>
-                    {feature}
-                  </li>
+          {services.map((service, idx) => (
+            <div key={idx} className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 flex flex-col items-center text-center dark:text-white">
+              <service.icon className="w-10 h-10 mb-4 text-heritage-gold" />
+              <h3 className="text-xl font-semibold mb-2 text-heritage-navy dark:text-white">{service.title}</h3>
+              <p className="text-gray-600 dark:text-gray-100 mb-4">{service.description}</p>
+              <ul className="list-disc list-inside text-gray-500 dark:text-gray-300 text-sm mb-2">
+                {service.features.map((feature, i) => (
+                  <li key={i}>{feature}</li>
                 ))}
               </ul>
-              
-              <button className="mt-6 text-heritage-gold font-semibold hover:text-heritage-navy transition-colors duration-200 flex items-center group">
-                Learn More
-                <span className="ml-2 group-hover:translate-x-1 transition-transform duration-200">→</span>
-              </button>
             </div>
           ))}
         </div>

@@ -36,7 +36,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-heritage-navy text-white relative">
+    <footer className="bg-heritage-navy dark:bg-gray-900 text-white dark:text-white pt-16 pb-8 px-4 sm:px-6 lg:px-8 mt-24 relative z-10">
       {/* Scroll to Top Button */}
       <button
         onClick={scrollToTop}
@@ -147,7 +147,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-white/20 pt-8">
+        <div className="border-t border-white/20 dark:border-gray-700 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-white/80 text-sm">
               © 2024 Savani Heritage. All rights reserved. | Privacy Policy | Terms of Service
