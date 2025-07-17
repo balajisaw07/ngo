@@ -1,7 +1,11 @@
-import React from 'react';
 import { Award, Users, Building, Heart } from 'lucide-react';
+import vinayImg from '../assets/vinay-dhavalaey.jpg';
+import sarlaImg from '../assets/sarla-bhirud.jpg';
+import kantikumarImg from '../assets/kantikumar-pawar.jpg';
+import yashadattaImg from '../assets/yashadatta-alone.jpg';
+import leenaImg from '../assets/leena-zilpe.jpg';
 
-const About = () => {
+export const AboutMain = () => {
   const values = [
     {
       icon: Award,
@@ -35,30 +39,26 @@ const About = () => {
             <div className="mb-6">
               <span className="text-heritage-gold font-semibold text-sm uppercase tracking-wider">About VARASA</span>
               <h2 className="text-4xl md:text-5xl font-bold text-heritage-navy font-serif mt-2 mb-6">
-                Guardians of 
+                Guardians of
                 <span className="text-heritage-gold"> Cultural Legacy</span>
               </h2>
             </div>
-            
             <div className="space-y-6 text-gray-600 leading-relaxed dark:text-gray-100">
               <p className="text-lg">
                 VĀRASĀ Association for Cultural Heritage and Archaeology, Pune, established under the Societies Registration Act, 1860 and Bombay Public Trust Act (est. 4th November 2011 Reg. No. Maha. 1918/2011), is a non-profit organization committed to the heritage preservation, research, and promotion of tangible and intangible cultural heritage and archaeology. Our mission is to safeguard historical treasures, raise awareness about the significance of cultural heritage, and support archaeological research and conservation efforts. With a team of passionate archaeologists, scientists, historians, conservationists, and heritage professionals, VĀRASĀ actively engages in excavation projects, documentation, conservation, and restoration of heritage sites, ensuring that history remains accessible and meaningful for future generations.
               </p>
-              
               <p>
-                Our team of master craftsmen, historians, and conservation experts work tirelessly to 
-                ensure that the stories embedded in stone, wood, and mortar continue to inspire 
-                future generations. We believe that heritage is not just about preserving the past, 
+                Our team of master craftsmen, historians, and conservation experts work tirelessly to
+                ensure that the stories embedded in stone, wood, and mortar continue to inspire
+                future generations. We believe that heritage is not just about preserving the past,
                 but about creating a bridge to the future.
               </p>
-              
               <p>
-                From ancient temples to colonial mansions, from traditional art forms to architectural 
-                marvels, we approach each project with reverence, expertise, and an unwavering 
+                From ancient temples to colonial mansions, from traditional art forms to architectural
+                marvels, we approach each project with reverence, expertise, and an unwavering
                 commitment to authenticity.
               </p>
             </div>
-
             <div className="mt-8 flex items-center space-x-8">
               <div className="text-center">
                 <div className="text-3xl font-bold text-heritage-gold font-serif">25+</div>
@@ -70,7 +70,6 @@ const About = () => {
               </div>
             </div>
           </div>
-
           {/* Right Image */}
           <div className="relative">
             <div className="aspect-square rounded-2xl overflow-hidden">
@@ -88,68 +87,140 @@ const About = () => {
             </div>
           </div>
         </div>
-
-        {/* Mission Section */}
-        <div className="mt-20">
-          <div className="flex flex-col items-center mb-10">
-            <span className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-heritage-gold/20 mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-heritage-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 1.343-3 3 0 1.657 1.343 3 3 3s3-1.343 3-3c0-1.657-1.343-3-3-3z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 2v2m0 16v2m10-10h-2M4 12H2m15.364-7.364l-1.414 1.414M6.05 17.95l-1.414 1.414m12.728 0l-1.414-1.414M6.05 6.05L4.636 4.636" /></svg>
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-heritage-navy font-serif mb-4 text-center drop-shadow dark:text-white">Our Mission</h2>
-            <p className="text-lg text-heritage-navy/80 max-w-2xl text-center mb-2 italic dark:text-gray-100">“Preserving the past, empowering the future.”</p>
-            <p className="text-base text-gray-600 max-w-2xl text-center mb-8 dark:text-gray-100">We are dedicated to advancing archaeology and cultural heritage through research, education, and community engagement, ensuring that history remains alive for generations to come.</p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* First Row: 4 cards */}
-            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-heritage-gold/30 dark:border-gray-700 aspect-square flex flex-col items-center justify-between p-6 min-h-[19rem] max-h-[19rem] min-w-[16rem] max-w-[16rem] transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-heritage-gold/70 group">
-              <span className="text-heritage-gold mb-2"><svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 1.343-3 3 0 1.657 1.343 3 3 3s3-1.343 3-3c0-1.657-1.343-3-3-3z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 2v2m0 16v2m10-10h-2M4 12H2m15.364-7.364l-1.414 1.414M6.05 17.95l-1.414 1.414m12.728 0l-1.414-1.414M6.05 6.05L4.636 4.636" /></svg></span>
-              <h4 className="text-lg font-semibold text-heritage-navy dark:text-white mb-1 text-center">Heritage Research & Conservation</h4>
-              <p className="text-gray-600 dark:text-gray-100 text-center text-sm font-normal leading-snug mb-2">Research, exploration, and documentation for the conservation of monuments and sites, ensuring their stories endure.</p>
-              <div className="mt-auto text-xs text-heritage-gold font-semibold">Impact: 150+ sites preserved</div>
-            </div>
-            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-heritage-gold/30 dark:border-gray-700 aspect-square flex flex-col items-center justify-between p-6 min-h-[19rem] max-h-[19rem] min-w-[16rem] max-w-[16rem] transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-heritage-gold/70 group delay-100">
-              <span className="text-heritage-gold mb-2"><svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422A12.083 12.083 0 0112 21.5a12.083 12.083 0 01-6.16-10.922L12 14z" /></svg></span>
-              <h4 className="text-lg font-semibold text-heritage-navy dark:text-white mb-1 text-center">Scholarship & Academic Support</h4>
-              <p className="text-gray-600 dark:text-gray-100 text-center text-sm font-normal leading-snug mb-2">Providing financial aid and research opportunities to empower the next generation of heritage professionals.</p>
-              <div className="mt-auto text-xs text-heritage-gold font-semibold">Impact: 200+ scholars supported</div>
-            </div>
-            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-heritage-gold/30 dark:border-gray-700 aspect-square flex flex-col items-center justify-between p-6 min-h-[19rem] max-h-[19rem] min-w-[16rem] max-w-[16rem] transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-heritage-gold/70 group delay-200">
-              <span className="text-heritage-gold mb-2"><svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 17l4 4 4-4m0-5V3a1 1 0 00-1-1H7a1 1 0 00-1 1v9m0 0l4 4 4-4" /></svg></span>
-              <h4 className="text-lg font-semibold text-heritage-navy dark:text-white mb-1 text-center">Educational Programs & Public Awareness</h4>
-              <p className="text-gray-600 dark:text-gray-100 text-center text-sm font-normal leading-snug mb-2">Seminars, workshops, and tours to inspire appreciation and understanding of India’s rich heritage.</p>
-              <div className="mt-auto text-xs text-heritage-gold font-semibold">Impact: 10,000+ participants reached</div>
-            </div>
-            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-heritage-gold/30 dark:border-gray-700 aspect-square flex flex-col items-center justify-between p-6 min-h-[19rem] max-h-[19rem] min-w-[16rem] max-w-[16rem] transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-heritage-gold/70 group delay-300">
-              <span className="text-heritage-gold mb-2"><svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21H5a2 2 0 01-2-2V7a2 2 0 012-2h4l2-2 2 2h4a2 2 0 012 2v12a2 2 0 01-2 2z" /></svg></span>
-              <h4 className="text-lg font-semibold text-heritage-navy dark:text-white mb-1 text-center">Publications & Knowledge Dissemination</h4>
-              <p className="text-gray-600 dark:text-gray-100 text-center text-sm font-normal leading-snug mb-2">Journals, brochures, and digital content to broaden public knowledge and scholarly discourse.</p>
-              <div className="mt-auto text-xs text-heritage-gold font-semibold">Impact: 50+ publications released</div>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 justify-center">
-            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-heritage-gold/30 dark:border-gray-700 aspect-square flex flex-col items-center justify-between p-6 min-h-[19rem] max-h-[19rem] min-w-[16rem] max-w-[16rem] transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-heritage-gold/70 group delay-400">
-              <span className="text-heritage-gold mb-2"><svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-3-3h-4a3 3 0 00-3 3v2h5z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20H4v-2a3 3 0 013-3h4a3 3 0 013 3v2H9z" /></svg></span>
-              <h4 className="text-lg font-semibold text-heritage-navy dark:text-white mb-1 text-center">Community Engagement & Outreach</h4>
-              <p className="text-gray-600 dark:text-gray-100 text-center text-sm font-normal leading-snug mb-2">Exhibitions, lectures, and campaigns to foster community participation in heritage protection.</p>
-              <div className="mt-auto text-xs text-heritage-gold font-semibold">Impact: 30+ outreach events</div>
-            </div>
-            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-heritage-gold/30 dark:border-gray-700 aspect-square flex flex-col items-center justify-between p-6 min-h-[19rem] max-h-[19rem] min-w-[16rem] max-w-[16rem] transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-heritage-gold/70 group delay-500">
-              <span className="text-heritage-gold mb-2"><svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 1.343-3 3 0 1.657 1.343 3 3 3s3-1.343 3-3c0-1.657-1.343-3-3-3z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 2v2m0 16v2m10-10h-2M4 12H2m15.364-7.364l-1.414 1.414M6.05 17.95l-1.414 1.414m12.728 0l-1.414-1.414M6.05 6.05L4.636 4.636" /></svg></span>
-              <h4 className="text-lg font-semibold text-heritage-navy dark:text-white mb-1 text-center">Museums & Cultural Spaces</h4>
-              <p className="text-gray-600 dark:text-gray-100 text-center text-sm font-normal leading-snug mb-2">Establishing museums and galleries to showcase and preserve artifacts and cultural narratives.</p>
-              <div className="mt-auto text-xs text-heritage-gold font-semibold">Impact: 5+ museums established</div>
-                </div>
-            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-heritage-gold/30 dark:border-gray-700 aspect-square flex flex-col items-center justify-between p-6 min-h-[19rem] max-h-[19rem] min-w-[16rem] max-w-[16rem] transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-heritage-gold/70 group delay-600">
-              <span className="text-heritage-gold mb-2"><svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" /></svg></span>
-              <h4 className="text-lg font-semibold text-heritage-navy dark:text-white mb-1 text-center">Digital & Technological Integration</h4>
-              <p className="text-gray-600 dark:text-gray-100 text-center text-sm font-normal leading-snug mb-2">Online platforms and digital repositories to foster global collaboration and knowledge sharing.</p>
-              <div className="mt-auto text-xs text-heritage-gold font-semibold">Impact: 1,000+ digital resources</div>
-              </div>
-          </div>
-        </div>
       </div>
     </section>
   );
 };
 
-export default About;
+// Card base styles for all member sections
+const cardBase =
+  "py-12 px-6 flex flex-col md:flex-row items-center gap-8 max-w-5xl mx-auto rounded-3xl shadow-xl mt-12 border-2 border-heritage-gold bg-white/90 dark:bg-gradient-to-br dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 dark:border-heritage-gold/60 transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]";
+const imgBase =
+  "w-64 h-80 object-cover rounded-2xl shadow-lg border-4 border-heritage-gold dark:border-heritage-gold/80 transition-all duration-300";
+const nameBase =
+  "text-3xl font-extrabold text-heritage-navy dark:text-heritage-gold mb-2 font-serif tracking-wide";
+const roleBase =
+  "text-lg text-heritage-gold dark:text-heritage-gold/80 font-semibold mb-2";
+const textBase =
+  "text-base md:text-lg text-gray-700 dark:text-gray-100 mb-2 leading-relaxed";
+const paraBase =
+  "text-gray-600 dark:text-gray-200 mb-2";
+
+export const VinaySection = () => (
+  <section className={cardBase}>
+    <img
+      src={vinayImg}
+      alt="Vinay Dhavalaey"
+      className={imgBase}
+      style={{ minWidth: '16rem' }}
+    />
+    <div className="flex-1">
+      <h3 className={nameBase}>Vinay Dhavalaey</h3>
+      <p className={roleBase}>Founder at V9 - the interior studio</p>
+      <p className={paraBase}>
+        Vinay Dhavalaey, Founder at V9 - the interior studio, is one of the significant entities responsible for the success of our firm. Having published articles for AURA 2015 magazine as chief editor, he has also showcased his skills greatly since 2014 via A&l Digest Design Exhibition, which intents to bring architecture and interior design trends, worldwide and ethnic, to the masses, as said by Amit Danait.
+      </p>
+      <p className={paraBase}>
+        Furthermore, A&l Digest Design Exhibition 2016, 2017, and 2018 were also lucky to once again experience the skillset of Mr. Dhavalaey. He grabbed audiences attention by grabbing the second position for Product Exhibition Display Competition in 2019.
+      </p>
+      <p className={paraBase}>
+        Our work and designs were extremely capable and sufficient to get mentioned in Yug Designs, a national level magazine, not once, not twice, but three times in a row. This reflects our ability to fulfill user requirements and gain their trusts.
+      </p>
+    </div>
+  </section>
+);
+
+export const SarlaSection = () => (
+  <section className={cardBase}>
+    <img
+      src={sarlaImg}
+      alt="Mrs. Sarla (Rashmi) Bhirud"
+      className={imgBase}
+      style={{ minWidth: '16rem' }}
+    />
+    <div className="flex-1">
+      <h3 className={nameBase}>Mrs. Sarla (Rashmi) Bhirud</h3>
+      <p className={roleBase}>Blogger and Independent Researcher</p>
+      <p className={paraBase}>
+        Sarla (Rashmi) Bhirud is a versatile scholar and writer with a rich academic and professional background spanning zoology, communication, Indology, and archaeology. She completed her B.Sc. in Zoology from M.J. College, Jalgaon and Fergusson College, Pune in 1991, followed by a Master’s in Communication Studies from the University of Pune in 1994. She gained a decade of experience as an Associate Producer at EMRC, Pune. Her deep interest in cultural heritage led her to pursue an M.A. in Indology (2015) from Tilak Maharashtra Vidyapith, Pune, and later an M.Phil. in Archaeology (2019) from Deccan College Post Graduate and Research Institute under the guidance of Dr. Pramod Joglekar. She also has hands-on experience in artifact documentation from archaeological sites during her time at Deccan College.
+      </p>
+      <p className={paraBase}>
+        Rashmi Bhirud has authored multiple research papers and published works in archaeology and cultural studies, focusing particularly on the Khandesh region, including topics such as Toranmal, Jalgaon’s archaeological landscape, and tribal memorials in Nandurbar. Her Marathi books—विविध धर्मांची ओळख, पूर्वजांचे संचित, and अदिती ते ती—are widely appreciated, and several others are in press. She actively contributes to academic conferences and writes on heritage, history, and social issues in newspapers like Lokmat and Janadesh. A committed poet, she has published four poetry collections each in Hindi/Urdu and Marathi. Her work reflects a deep commitment to cultural preservation, regional history, and community engagement through both scholarship and creative writing.
+      </p>
+    </div>
+  </section>
+);
+
+export const KantikumarSection = () => (
+  <section className={cardBase}>
+    <img
+      src={kantikumarImg}
+      alt="Dr. Kantikumar Anant Pawar"
+      className={imgBase}
+      style={{ minWidth: '16rem' }}
+    />
+    <div className="flex-1">
+      <h3 className={nameBase}>Dr. Kantikumar Anant Pawar</h3>
+      <p className={roleBase}>Founder / General Secretary</p>
+      <p className={paraBase}>
+        Dr. Kantikumar Anant Pawar is a dedicated academician with 15 years of experience as an Assistant Professor in postgraduate teaching, research, and consultancy in archaeology. His expertise spans interdisciplinary research, student mentorship, academic administration, and international collaboration. He has a strong background in archaeological Excavation, exploration, conservation, and heritage management.
+      </p>
+      <p className={paraBase}>
+        He holds a Ph.D. in Ancient Indian History, Culture, and Archaeology from Deccan College, Pune (2015), a Post Graduate Diploma in Archaeology (PGDA) from the Institute of Archaeology, ASI, New Delhi (2007), and has qualified UGC-NET with JRF (2007).
+      </p>
+      <p className={paraBase}>
+        His research contributions include participation in 30 national and 28 international seminars, with 27 national and 3 international published research papers. He has delivered numerous lectures and guided research scholars at the Ph.D., M.Phil., and M.A. levels. He has directed three major archaeological excavations in Maharashtra and surveys in different parts of the country. He was actively involved in the Polavaram Dam Salvage Archaeology Project (2017-18).
+      </p>
+      <p className={paraBase}>
+        Dr. Pawar is recipient of JRF (UGC) and INTACH National Research Fellowship. He is a life member of several professional organizations, including ISPQS, SOSAA, RASI, IAS. He has served on various academic committees and has coordinated major international conferences on rock art and salvage archaeology. Currently, he continues to contribute to archaeological research, heritage conservation, and student mentorship.
+      </p>
+    </div>
+  </section>
+);
+
+export const YashadattaSection = () => (
+  <section className={cardBase}>
+    <img
+      src={yashadattaImg}
+      alt="Prof. Yashadatta S. Alone"
+      className={imgBase}
+      style={{ minWidth: '16rem' }}
+    />
+    <div className="flex-1">
+      <h3 className={nameBase}>Prof. Yashadatta S. Alone</h3>
+      <p className={roleBase}>Vice President</p>
+      <p className={paraBase}>
+        Prof. Y. S. Alone is a Professor of Visual Studies at the School of Arts and Aesthetics, Jawaharlal Nehru University, New Delhi. He holds a Ph.D. and M.Phil. from the Centre for Historical Studies at Jawaharlal Nehru University and M.A. in Fine Arts (Art History) from M. S. University, Baroda. With over 18 years of teaching and research at JNU, he has previously taught at Deccan College Postgraduate Research Institute, Pune, and Kurukshetra University. He was nominated as ICCR Chair visiting Professor at Shenzhen University, China. He was invited as a short-term visiting professor at Renmin University, Beijing, East China Normal University, Shanghai, Autonoma University Madrid, Spain, and Heidelberg University, Germany.
+      </p>
+      <p className={paraBase}>
+        His areas of specialization include ancient Indian and Buddhist art, cave architecture, the visual culture of marginalized communities, and Ambedkarite aesthetics. He has lectured widely in India and abroad, mainly in China, the USA, Spain, and Germany. He has published extensively, including the book "Buddhist Caves of Western India: Forms and Patronage", and is known for his work on western Indian Buddhist caves, Ajanta, Ambedkarian aesthetics, and contemporary art practices.
+      </p>
+      <p className={paraBase}>
+        Prof. Alone is a recipient of the UGC Research Fellowship and has served as an expert member on the Planning Commission’s Expert Group on Culture, Ministry of Culture, Government of India, and academic bodies of several universities. He is known for conceptual formulation termed as "Protected Ignorance" and has published papers on it.
+      </p>
+    </div>
+  </section>
+);
+
+export const LeenaSection = () => (
+  <section className={cardBase}>
+    <img
+      src={leenaImg}
+      alt="Ms. Leena Zilpe"
+      className={imgBase}
+      style={{ minWidth: '16rem' }}
+    />
+    <div className="flex-1">
+      <h3 className={nameBase}>Ms. Leena Zilpe</h3>
+      <p className={roleBase}>Member</p>
+      <p className={paraBase}>
+        Leena Zilpe is a leading national conservator of cultural property at the National Research Laboratory for Conservation of Cultural Property (NRLC), under India’s Ministry of Culture. Based in Nagpur, she has spearheaded the preservation of iconic collections, including Mahatma Gandhi’s personal artifacts (2008–2010) and over 170 items belonging to Dr. B. R. Ambedkar for a museum in Chicholi. A postgraduate in Applied Art as well as Archaeology from Nagpur University, she topped her museology course at NRLC’s Lucknow center and holds multi-disciplinary expertise in ancient Indian history, linguistics (Sanskrit, Prakrit, Pali, Urdu), and conservation techniques.
+      </p>
+      <p className={paraBase}>
+        Her projects include restoring masterpieces by Gaitonde and Raza, reconstructing a 51‑feet Bhagavad Gita scroll, and preserving temple paintings, palm-leaf manuscripts, and historic textiles. Through her initiatives, she advocates minimal-intervention principles and sustainable preservation practices tailored to climate‑vulnerable contexts.
+      </p>
+    </div>
+  </section>
+);
+
+export default AboutMain;

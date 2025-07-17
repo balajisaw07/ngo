@@ -10,6 +10,7 @@ import AdminLogin from './pages/AdminLogin';
 import AdminDashboard from './pages/AdminDashboard';
 import { AuthProvider } from './context/AuthContext';
 import { ContentProvider } from './context/ContentContext';
+import AboutUs from './pages/AboutUs';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
               {/* <Route path="/projects" element={<ProjectsPage />} />  */}
               {/* <Route path="/blog" element={<BlogPage />} /> */}
               {/* <Route path="/careers" element={<CareerPage />} /> */}
+              <Route path="/about-us" element={<AboutUs />} />
               <Route path="/admin" element={<AdminLogin />} />
               <Route path="/admin/dashboard" element={<AdminDashboard />} />
             </Routes>
