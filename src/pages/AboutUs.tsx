@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AboutMain, VinaySection, SarlaSection, KantikumarSection, YashadattaSection, LeenaSection } from '../components/About';
+import { AboutMain, VinaySection, SarlaSection, KantikumarSection, YashadattaSection, LeenaSection, GaneshSection } from '../components/About';
 
 const AboutUs = () => {
   const [showSarla, setShowSarla] = useState(true);
@@ -15,6 +15,7 @@ const AboutUs = () => {
       <div className="space-y-16">
         <AboutMain />
         <VinaySection />
+        <GaneshSection />
         <div className="text-center">
          
         </div>

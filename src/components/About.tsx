@@ -4,6 +4,7 @@ import sarlaImg from '../assets/sarla-bhirud.jpg';
 import kantikumarImg from '../assets/kantikumar-pawar.jpg';
 import yashadattaImg from '../assets/yashadatta-alone.jpg';
 import leenaImg from '../assets/leena-zilpe.jpg';
+import ganeshImg from '../assets/97200635_1635974116570437_4582947709350051840_n.jpg';
 
 export const AboutMain = () => {
   const values = [
@@ -218,6 +219,24 @@ export const LeenaSection = () => (
       </p>
       <p className={paraBase}>
         Her projects include restoring masterpieces by Gaitonde and Raza, reconstructing a 51‑feet Bhagavad Gita scroll, and preserving temple paintings, palm-leaf manuscripts, and historic textiles. Through her initiatives, she advocates minimal-intervention principles and sustainable preservation practices tailored to climate‑vulnerable contexts.
+      </p>
+    </div>
+  </section>
+);
+
+export const GaneshSection = () => (
+  <section className={cardBase}>
+    <img
+      src={ganeshImg}
+      alt="Adv. Ganesh Halkare"
+      className={imgBase}
+      style={{ minWidth: '16rem' }}
+    />
+    <div className="flex-1">
+      <h3 className={nameBase}>Adv. Ganesh Halkare</h3>
+      <p className={roleBase}>Treasurer</p>
+      <p className={paraBase}>
+        Adv. Ganesh Vitthalrao Halkare is a seasoned advocate based in Amravati, Maharashtra, practicing independently with a client-centered and ethically grounded approach. He also holds a post‑graduate degree in Archaeology and Anthropology from Nagpur University and has a notable scholarly presence, with over a dozen research papers—including contributions to tribal astronomy studies—focusing on tribal education, superstition eradication, and the rights awareness among indigenous communities.
       </p>
     </div>
   </section>

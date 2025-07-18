@@ -54,7 +54,7 @@ const Footer = () => {
                 <Crown className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h3 className="text-xl font-bold font-serif">Savani Heritage</h3>
+                <h3 className="text-xl font-bold font-serif">Varasa</h3>
                 <p className="text-sm text-white/70">Preserving Legacy</p>
               </div>
             </div>
@@ -66,15 +66,15 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-white/80">
                 <Mail size={16} />
-                <span>info@savaniheritage.com</span>
+                <span>varasa.acha@gmail.com</span>
               </div>
               <div className="flex items-center space-x-3 text-white/80">
                 <Phone size={16} />
-                <span>+91 98765 43210</span>
+                <span>+91 9881409532</span>
               </div>
               <div className="flex items-center space-x-3 text-white/80">
                 <MapPin size={16} />
-                <span>Heritage House, Mumbai</span>
+                <span>A-903 Ruturang Society, Behind Paranjape School, Kothrud, Pune - 411038</span>
               </div>
             </div>
           </div>

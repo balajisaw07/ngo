@@ -1,7 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState, useEffect, useRef, createContext, useContext } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, Crown, Moon, Sun } from 'lucide-react';
 import logo from '../assets/logo.png';
+
+export const ShowHeroOnlyContext = React.createContext<{showHeroOnly: boolean, setShowHeroOnly: (v: boolean) => void}>({showHeroOnly: false, setShowHeroOnly: () => {}});
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,6 +15,16 @@ const Header = () => {
   // Add state for open mobile section
   const [openMobileSection, setOpenMobileSection] = useState<string | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const { setShowHeroOnly } = useContext(ShowHeroOnlyContext);
+  const [homeClickCount, setHomeClickCount] = useState(0);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (homeClickCount === 2) {
+      setShowHeroOnly(true);
+      setHomeClickCount(0);
+    }
+  }, [homeClickCount, setShowHeroOnly]);
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -156,40 +168,61 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
             <img src={logo} alt="VĀRASĀ Logo" className="h-12 w-auto" />
-            <span className="text-3xl font-extrabold tracking-wide font-serif text-[#d32f2f] dark:text-white drop-shadow-sm" style={{ letterSpacing: '0.2em' }}>VĀRASĀ</span>
+            <span className="text-3xl font-extrabold tracking-wide font-serif drop-shadow-sm" style={{ letterSpacing: '0.2em' }}>
+              <span style={{ color: '#d32f2f' }}>V</span>
+              <span style={{ color: '#f9a825' }}>Ā</span>
+              <span style={{ color: '#1976d2' }}>R</span>
+              <span style={{ color: '#388e3c' }}>A</span>
+              <span style={{ color: '#7b1fa2' }}>S</span>
+              <span style={{ color: '#d32f2f' }}>Ā</span>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-start space-x-8 text-heritage-navy dark:text-white mt-4">
             {navItems.map((item) => (
-              item.children ? (
-                <div key={item.name} className="relative" ref={openDropdown === item.name ? dropdownRef : null}>
-                  <button
-                    type="button"
-                    className="font-bold text-base px-2 py-1 bg-gray-200 dark:bg-gray-800 rounded-t hover:bg-heritage-gold/20 dark:hover:bg-heritage-gold/20 transition-colors duration-200"
-                    onClick={() => setOpenDropdown(openDropdown === item.name ? null : item.name)}
-                    aria-haspopup="true"
-                    aria-expanded={openDropdown === item.name}
-                  >
-                    {item.name}
-                  </button>
-                  <div
-                    className={
-                      (openDropdown === item.name ? 'block' : 'hidden') +
-                      ' absolute left-0 mt-2 w-56 bg-white dark:bg-gray-900 shadow-lg rounded-lg py-2 z-50'
-                    }
-                  >
-                    {renderSubmenu(item.children)}
-                  </div>
-                </div>
-              ) : (
-                <Link
+              item.name === 'HOME' ? (
+                <button
                   key={item.name}
-                  to={item.path}
+                  type="button"
                   className="font-bold text-base px-2 py-1 bg-gray-200 dark:bg-gray-800 rounded-t hover:bg-heritage-gold/20 dark:hover:bg-heritage-gold/20 transition-colors duration-200"
+                  onClick={() => {
+                    setHomeClickCount((c) => c + 1);
+                    navigate('/');
+                  }}
                 >
                   {item.name}
-                </Link>
+                </button>
+              ) : (
+                item.children ? (
+                  <div key={item.name} className="relative" ref={openDropdown === item.name ? dropdownRef : null}>
+                    <button
+                      type="button"
+                      className="font-bold text-base px-2 py-1 bg-gray-200 dark:bg-gray-800 rounded-t hover:bg-heritage-gold/20 dark:hover:bg-heritage-gold/20 transition-colors duration-200"
+                      onClick={() => setOpenDropdown(openDropdown === item.name ? null : item.name)}
+                      aria-haspopup="true"
+                      aria-expanded={openDropdown === item.name}
+                    >
+                      {item.name}
+                    </button>
+                    <div
+                      className={
+                        (openDropdown === item.name ? 'block' : 'hidden') +
+                        ' absolute left-0 mt-2 w-56 bg-white dark:bg-gray-900 shadow-lg rounded-lg py-2 z-50'
+                      }
+                    >
+                      {renderSubmenu(item.children)}
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    key={item.name}
+                    to={item.path}
+                    className="font-bold text-base px-2 py-1 bg-gray-200 dark:bg-gray-800 rounded-t hover:bg-heritage-gold/20 dark:hover:bg-heritage-gold/20 transition-colors duration-200"
+                  >
+                    {item.name}
+                  </Link>
+                )
               )
             ))}
             <button

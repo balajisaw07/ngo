@@ -27,19 +27,19 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      details: ['info@savaniheritage.com', 'projects@savaniheritage.com'],
-      link: 'mailto:info@savaniheritage.com'
+      details: ['varasa.acha@gmail.com'],
+      link: 'mailto:varasa.acha@gmail.com'
     },
     {
       icon: Phone,
       title: 'Call Us',
-      details: ['+91 98765 43210', '+91 87654 32109'],
-      link: 'tel:+919876543210'
+      details: ['+91 9881409532'],
+      link: 'tel:+919881409532'
     },
     {
       icon: MapPin,
       title: 'Visit Us',
-      details: ['Heritage House, Old City', 'Mumbai, Maharashtra 400001'],
+      details: ['A-903 Ruturang Society, Behind Paranjape School, Kothrud, Pune - 411038'],
       link: '#'
     },
     {

@@ -10,7 +10,7 @@ const Testimonials = () => {
       name: 'Dr. Priya Sharma',
       role: 'Archaeological Survey of India',
       image: 'https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop',
-      content: 'Savani Heritage\'s work on the temple complex was exceptional. Their attention to historical accuracy and use of traditional techniques exceeded our expectations.',
+      content: 'VARASA\'s work on the temple complex was exceptional. Their attention to historical accuracy and use of traditional techniques exceeded our expectations.',
       rating: 5
     },
     {
@@ -26,7 +26,7 @@ const Testimonials = () => {
       name: 'Meera Joshi',
       role: 'Cultural Heritage Foundation',
       image: 'https://images.pexels.com/photos/3785077/pexels-photo-3785077.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop',
-      content: 'Working with Savani Heritage was a remarkable experience. Their commitment to quality and cultural sensitivity made our project a tremendous success.',
+      content: 'Working with VARASA was a remarkable experience. Their commitment to quality and cultural sensitivity made our project a tremendous success.',
       rating: 5
     }
   ];
